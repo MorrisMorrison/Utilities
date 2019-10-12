@@ -6,7 +6,7 @@ namespace UtitlitiesTest.Persistence
 {
     
     [TestFixture]
-    public class Persistence
+    public class PersistenceTests
     {
 
         private string _connectionString = "Server=localhost;Port=5432;Database=tests;User ID=postgres;Password=postgres;";

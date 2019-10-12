@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b6961d7-03a3-49e6-8bf2-9a4619b23d4d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Utilities/.idea/.idea.Utilities/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Utilities/.idea/.idea.Utilities/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utilities/.idea/.idea.Utilities/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Utilities/.idea/.idea.Utilities/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utilities/Utilities/Class1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utilities/Utilities/Persistence/Persistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Utilities/Utilities/Persistence/Persistence.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UtitlitiesTest/Main.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/Persistence/Persistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/Persistence/Persistence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/UtitlitiesTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/UtitlitiesTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/UtitlitiesTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/UtitlitiesTest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/nunit_random_seed.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/nunit_random_seed.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.pdb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,9 +40,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/UtitlitiesTest/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UtitlitiesTest/Collections/Collections.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UtitlitiesTest/Persistence/Persistence.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UtitlitiesTest/Main.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B28E8D1C-D3BC-4AEC-AFB9-53A1BB401C11/32/PostgresException.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -43,6 +51,7 @@
         <option value="$PROJECT_DIR$/UtitlitiesTest/Program.cs" />
         <option value="$PROJECT_DIR$/UtitlitiesTest/Collections/Collections.cs" />
         <option value="$PROJECT_DIR$/UtitlitiesTest/Persistence/Persistence.cs" />
+        <option value="$PROJECT_DIR$/UtitlitiesTest/Main.cs" />
       </list>
     </option>
   </component>
@@ -53,6 +62,7 @@
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Utilities" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -99,7 +109,7 @@
       <workItem from="1570877968662" duration="1539000" />
       <workItem from="1570887290882" duration="1857000" />
       <workItem from="1570890878920" duration="3869000" />
-      <workItem from="1570897967270" duration="3538000" />
+      <workItem from="1570897967270" duration="4501000" />
     </task>
     <servers />
   </component>
