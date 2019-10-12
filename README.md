@@ -21,19 +21,19 @@ collection.Each((p_item, p_index) => Console.WriteLine($@"Item: {p_index} at ind
 ## Persistence
 (inspired by dapper)
 
-###Execute
+### Execute
 Allows executing any statement, without handling connections.
 
 - Execute
 '''csharp
-int numberOfAffectedRows = Persistence.Execute(connectionString.sql);
+int numberOfAffectedRows = Persistence.Execute(connectionString,sql);
 '''
 - ExecuteInTransaction
 '''csharp
-int numberOfAffectedRows = Persistence.ExecuteInTransaction(connectionString.sql);
+int numberOfAffectedRows = Persistence.ExecuteInTransaction(connectionString,sql);
 '''
 
-###Query
+### Query
 - Query
 Returns a list of all matching entities
 '''csharp
