@@ -1,6 +1,6 @@
 # Utilities
 
-Utility Library which provides extension methods sitting on top of the NET standard library and utility classes.
+Utility Library which provides extension methods for the NET standard library.
 
 
 ## Collections
@@ -8,48 +8,58 @@ Utility Library which provides extension methods sitting on top of the NET stand
 Allows looping in linq-style.
 
 - Each
-'''csharp
+```csharp
 collection.Each(p_item => p_item.DoSomething());
-'''
+```
 
 - Each with index
-'''csharp
+```csharp
 collection.Each((p_item, p_index) => Console.WriteLine($@"Item: {p_index} at index {p_index}"));
-'''
+```
 
 
 ## Persistence
 (inspired by dapper)
 
 ### Execute
-Allows executing any statement, without handling connections.
+Allows executing any statement
 
 - Execute
-'''csharp
-int numberOfAffectedRows = Persistence.Execute(connectionString,sql);
-'''
+```csharp
+using (SqlConnection connection = new SqlConnection(connectionString){
+	int numberOfAffectedRows = connection.Execute(sql);
+}
+
+```
 - ExecuteInTransaction
-'''csharp
-int numberOfAffectedRows = Persistence.ExecuteInTransaction(connectionString,sql);
-'''
+```csharp
+using (SqlConnection connection = new SqlConnection(connectionString){
+	int numberOfAffectedRows = connection.ExecuteInTransaction(sql);
+}
+```
 
 ### Query
 - Query
 Returns a list of all matching entities
-'''csharp
-IList<TestEntity> testEntities = Persistence.Query<TestEntity>(connectionString, sql);
-'''
+```csharp
+using (SqlConnection connection = new SqlConnection(connectionString){
+	IList<TestEntity> testEntities = connection.Query<TestEntity>(sql);
+}
+```
 
 - QueryFirst
 Returns null when result not found
-'''csharp
-TestEntity test = Persistence.QueryFirst<TestEntity>(connectionString, sql);
-'''
-
+```csharp
+using (SqlConnection connection = new SqlConnection(connectionString){
+	TestEntity test = connection.QueryFirst<TestEntity>(sql);
+}
+```
 
 - QueryFirstOrDefault
 Returns empty object with default values initialized for all properties
-'''csharp
-TestEntity test = Persistence.QueryFirstOrDefault<TestEntity>(connectionString, sql);
-'''
+```csharp
+using (SqlConnection connection = new SqlConnection(connectionString){
+	TestEntity test = connection.QueryFirstOrDefault<TestEntity>(sql);
+}
+```
 

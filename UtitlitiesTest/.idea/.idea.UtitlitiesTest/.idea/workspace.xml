@@ -3,6 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="1b6961d7-03a3-49e6-8bf2-9a4619b23d4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Utilities/Utilities/Persistence/Persistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Utilities/Utilities/Persistence/Persistence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreateTestTable.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/Main.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/Persistence/Persistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/Persistence/Persistence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/Utilities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/Utilities.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/Utilities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/Utilities.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/UtitlitiesTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/UtitlitiesTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/UtitlitiesTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/UtitlitiesTest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/nunit_random_seed.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/bin/Debug/netcoreapp3.0/nunit_random_seed.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.pdb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +52,9 @@
       <list>
         <option value="$PROJECT_DIR$/UtitlitiesTest/Program.cs" />
         <option value="$PROJECT_DIR$/UtitlitiesTest/Collections/Collections.cs" />
-        <option value="$PROJECT_DIR$/UtitlitiesTest/Persistence/Persistence.cs" />
+        <option value="$PROJECT_DIR$/CreateTestDatabase.sql" />
         <option value="$PROJECT_DIR$/UtitlitiesTest/Main.cs" />
+        <option value="$PROJECT_DIR$/UtitlitiesTest/Persistence/Persistence.cs" />
       </list>
     </option>
   </component>
@@ -50,7 +64,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Utilities" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SimpleRestFramework/SimpleRestFramework" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
@@ -98,7 +112,8 @@
       <workItem from="1570877968662" duration="1539000" />
       <workItem from="1570887290882" duration="1857000" />
       <workItem from="1570890878920" duration="3869000" />
-      <workItem from="1570897967270" duration="4920000" />
+      <workItem from="1570897967270" duration="8828000" />
+      <workItem from="1570919139522" duration="2563000" />
     </task>
     <servers />
   </component>
@@ -112,7 +127,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

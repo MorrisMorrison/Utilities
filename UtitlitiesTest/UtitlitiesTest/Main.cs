@@ -20,7 +20,8 @@ namespace UtitlitiesTest
             PersistenceTests persistenceTests = new PersistenceTests();
             persistenceTests.ExecuteTest();
             persistenceTests.QueryTest();
-
+            persistenceTests.QueryFirstTest();
+            persistenceTests.QueryFirstOrDefaultTest();
         }
 
     }
