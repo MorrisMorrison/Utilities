@@ -5,7 +5,6 @@
     <e p="$USER_HOME$/.Rider2019.2/system/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_Utilities.1758650872.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Utilities" t="IncludeRecursive">
-        <e p="Class1.cs" t="Include" />
         <e p="Collections" t="Include">
           <e p="Collections.cs" t="Include" />
         </e>
