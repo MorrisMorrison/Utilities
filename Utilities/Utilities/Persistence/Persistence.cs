@@ -15,10 +15,41 @@ namespace Utilities.Persistence
         {
             using (NpgsqlConnection dbConnection = new NpgsqlConnection(p_connectionString))
             {
+                dbConnection.Open();
+                
                 NpgsqlCommand command = new NpgsqlCommand(p_sql, dbConnection);
                 return command.ExecuteNonQuery();
             }
         }
+
+        public static int ExecuteInTransaction(string p_connectionString, string p_sql)
+        {
+            int affectedRows = 0;
+            
+            using (NpgsqlConnection dbConnection = new NpgsqlConnection(p_connectionString))
+            {
+                dbConnection.Open();
+                using (NpgsqlTransaction npgsqlTransaction = dbConnection.BeginTransaction())
+                {
+                    using (NpgsqlCommand command = new NpgsqlCommand(p_sql, dbConnection))
+                    {
+                        try
+                        {
+                            affectedRows = command.ExecuteNonQuery();
+                            npgsqlTransaction.Commit();
+                        }
+                        catch (Exception e)
+                        {
+                            npgsqlTransaction.Rollback();
+                            throw;
+                        }                        
+                    }
+                }
+            }
+
+            return affectedRows;
+        }
+        
         public static IEnumerable<T> Query<T>(string p_connectionString, string p_sql)
         {
             using (NpgsqlConnection dbConnection = new NpgsqlConnection(p_connectionString))
