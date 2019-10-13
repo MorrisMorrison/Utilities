@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Npgsql;
+using NpgsqlTypes;
 using Utilities.Collections;
 
 namespace Utilities.Persistence
@@ -50,6 +52,7 @@ namespace Utilities.Persistence
             }
 
             p_connection.Open();
+
             using (NpgsqlCommand command = new NpgsqlCommand(p_sql, (NpgsqlConnection) p_connection))
             {
                 using (NpgsqlDataReader sqlDataReader = command.ExecuteReader())
@@ -108,6 +111,7 @@ namespace Utilities.Persistence
                 }
             }
         }
+
 
         public static T QueryFirst<T>(this IDbConnection p_connection, string p_sql)
         {
@@ -231,6 +235,117 @@ namespace Utilities.Persistence
             }
 
             return (T) entity;
+        }
+
+        public static void Update<T>(this IDbConnection p_connection, T p_entity)
+        {
+            p_connection.Open();
+            
+            string sql = $@"UPDATE ""{typeof(T).Name}"" SET ";
+
+            Type type = typeof(T);
+            PropertyInfo[] propertyInfos = type.GetProperties();
+            propertyInfos.Each((p_info, p_index) =>
+            {
+                sql += $@"{p_info.Name} = @{p_info.Name}";
+
+                if (p_index != propertyInfos.Length - 1)
+                {
+                    sql += ", ";
+                }
+            });
+
+            if (type.GetProperty("id") == null) return;
+
+            sql += $" WHERE id = {type.GetProperty("id").GetValue(p_entity)};";
+            Console.WriteLine(sql);
+
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, (NpgsqlConnection) p_connection))
+            {
+                propertyInfos.Each(p_info =>
+                {
+                    switch (p_info.PropertyType.Name.ToLower())
+                    {
+                        case "char":
+                            command.Parameters.Add(new NpgsqlParameter(p_info.Name, NpgsqlDbType.Char)
+                            {
+                                Value = type.GetProperty(p_info.Name).GetValue(p_entity)
+                            });
+                            break;
+                        case "boolean":
+                            command.Parameters.Add(
+                                new NpgsqlParameter(p_info.Name, NpgsqlDbType.Boolean)
+                                {
+                                    Value = type.GetProperty(p_info.Name).GetValue(p_entity)
+                                });
+                            break;
+                        case "string":
+                            command.Parameters.Add(
+                                new NpgsqlParameter(p_info.Name, NpgsqlDbType.Varchar)
+                                {
+                                    Size = 200,
+                                    Value = type.GetProperty(p_info.Name).GetValue(p_entity)
+                                });
+                            break;
+                        case "byte":
+                            command.Parameters.Add(
+                                new NpgsqlParameter(p_info.Name, NpgsqlDbType.Bytea)
+                                {
+                                    Value = type.GetProperty(p_info.Name).GetValue(p_entity)
+                                });
+                            break;
+                        case "decimal":
+                            command.Parameters.Add(
+                                new NpgsqlParameter(p_info.Name, NpgsqlDbType.Numeric)
+                                {
+                                    Value = type.GetProperty(p_info.Name).GetValue(p_entity)
+                                });
+                            break;
+                        case "float":
+                            command.Parameters.Add(
+                                new NpgsqlParameter(p_info.Name, NpgsqlDbType.Numeric)
+                                {
+                                    Value = type.GetProperty(p_info.Name).GetValue(p_entity)
+                                });
+                            break;
+                        case "double":
+                            command.Parameters.Add(
+                                new NpgsqlParameter(p_info.Name, NpgsqlDbType.Double)
+                                {
+                                    Value = type.GetProperty(p_info.Name).GetValue(p_entity)
+                                });
+                            break;
+                        case "int16":
+                            command.Parameters.Add(
+                                new NpgsqlParameter(p_info.Name, NpgsqlDbType.Smallint)
+                                {
+                                    Value = type.GetProperty(p_info.Name).GetValue(p_entity)
+                                });
+                            break;
+                        case "int32":
+                            command.Parameters.Add(
+                                new NpgsqlParameter(p_info.Name, NpgsqlDbType.Integer)
+                                {
+                                    Value = type.GetProperty(p_info.Name).GetValue(p_entity)
+                                });
+                            break;
+                        case "int64":
+                            command.Parameters.Add(
+                                new NpgsqlParameter(p_info.Name, NpgsqlDbType.Bigint)
+                                {
+                                    Value = type.GetProperty(p_info.Name).GetValue(p_entity)
+                                });
+                            break;
+                        default:
+                            break;
+                    }
+                });
+
+                Console.WriteLine(command.CommandText);
+                Console.WriteLine(sql);
+
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

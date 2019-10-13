@@ -10,7 +10,7 @@ namespace UtitlitiesTest
     public class Main
     {
 
-        [Test]
+        [Test, Explicit]
         public void RunAllTests()
         {
             CollectionsTests collectionTests = new CollectionsTests();

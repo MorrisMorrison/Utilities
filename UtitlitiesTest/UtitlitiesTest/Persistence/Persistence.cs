@@ -135,5 +135,29 @@ namespace UtitlitiesTest.Persistence
                 Assert.IsNull(result.name);
             }
         }
+
+        [Test]
+        public void UpdateTest()
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
+            {
+                Test newTest = new Test()
+                {
+                    id = 1,
+                    name = "test16"
+                };
+
+                connection.Update(newTest);
+            }
+
+            using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
+            {
+                string sql = @"SELECT * FROM public.""Test"" WHERE id = 1;";
+                Test first = connection.QueryFirst<Test>(sql);
+
+                Assert.AreEqual(1, first.id);
+                Assert.AreEqual($@"test16", first.name);
+            }
+        }
     }
 }
