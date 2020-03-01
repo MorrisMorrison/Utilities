@@ -18,10 +18,11 @@ namespace UtitlitiesTest
             collectionTests.EachWithIndexTest();
 
             PersistenceTests persistenceTests = new PersistenceTests();
-            persistenceTests.ExecuteTest();
-            persistenceTests.QueryTest();
-            persistenceTests.QueryFirstTest();
-            persistenceTests.QueryFirstOrDefaultTest();
+            
+            persistenceTests.SimpleExecuteTest();
+            persistenceTests.SimpleQueryTest();
+            persistenceTests.SimpleQueryFirstTest();
+            persistenceTests.SimpleQueryFirstOrDefaultTest();
         }
 
     }

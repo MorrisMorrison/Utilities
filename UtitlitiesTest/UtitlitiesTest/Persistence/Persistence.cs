@@ -14,10 +14,10 @@ namespace UtitlitiesTest.Persistence
     public class PersistenceTests
     {
         private string _connectionString =
-            "Server=localhost;Port=5432;Database=tests;User ID=postgres;Password=postgres;";
+            "Server=localhost;Port=5432;Database=postgres;User ID=postgres;Password=changeme;";
 
 
-        [OneTimeSetUp]
+        [SetUp]
         public void SetUp()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
@@ -29,7 +29,7 @@ namespace UtitlitiesTest.Persistence
             }
         }
 
-        [OneTimeTearDown]
+        [TearDown]
         public void TearDown()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
@@ -42,13 +42,13 @@ namespace UtitlitiesTest.Persistence
 
 
         [Test]
-        public void ExecuteTest()
+        public void SimpleExecuteTest()
         {
             string sql = @"INSERT INTO ""Test"" (id, name) VALUES(6, 'test6')";
 
             using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
             {
-                int rows = connection.Execute(sql);
+                int rows = connection.SimpleExecute(sql);
                 Assert.AreEqual(1, rows);
             }
 
@@ -72,11 +72,11 @@ namespace UtitlitiesTest.Persistence
         }
 
         [Test]
-        public void QueryTest()
+        public void SimpleQueryTest()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
             {
-                IList<Test> result = connection.Query<Test>().ToList();
+                IList<Test> result = connection.SimpleQuery<Test>().ToList();
 
                 Assert.AreEqual(5, result.Count);
 
@@ -89,13 +89,13 @@ namespace UtitlitiesTest.Persistence
         }
 
         [Test]
-        public void QueryFirstTest()
+        public void SimpleQueryFirstTest()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
             {
                 string sql = @"SELECT * FROM ""Test"" WHERE id = 1;";
 
-                Test result = connection.QueryFirst<Test>(sql);
+                Test result = connection.SimpleQueryFirst<Test>(sql);
                 
                 Assert.AreEqual(1, result.id);
                 Assert.AreEqual($@"test1", result.name);
@@ -105,7 +105,7 @@ namespace UtitlitiesTest.Persistence
             {
                 string sql = @"SELECT * FROM ""Test"" WHERE id = 6;";
 
-                Test result = connection.QueryFirst<Test>(sql);
+                Test result = connection.SimpleQueryFirst<Test>(sql);
                 
                 Assert.IsNull(result);
             }
@@ -113,13 +113,13 @@ namespace UtitlitiesTest.Persistence
 
 
         [Test]
-        public void QueryFirstOrDefaultTest()
+        public void SimpleQueryFirstOrDefaultTest()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
             {
                 string sql = @"SELECT * FROM ""Test"" WHERE id = 1;";
 
-                Test result = connection.QueryFirstOrDefault<Test>(sql);
+                Test result = connection.SimpleQueryFirstOrDefault<Test>(sql);
                 
                 Assert.AreEqual(1, result.id);
                 Assert.AreEqual($@"test1", result.name);
@@ -129,7 +129,7 @@ namespace UtitlitiesTest.Persistence
             {
                 string sql = @"SELECT * FROM ""Test"" WHERE id = 6;";
 
-                Test result = connection.QueryFirstOrDefault<Test>(sql);
+                Test result = connection.SimpleQueryFirstOrDefault<Test>(sql);
                 
                 Assert.AreEqual(0, result.id);
                 Assert.IsNull(result.name);
@@ -137,7 +137,7 @@ namespace UtitlitiesTest.Persistence
         }
 
         [Test]
-        public void UpdateTest()
+        public void SimpleUpdateTest()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
             {
@@ -147,17 +147,42 @@ namespace UtitlitiesTest.Persistence
                     name = "test16"
                 };
 
-                connection.Update(newTest);
+                connection.SimpleUpdate(newTest);
             }
 
             using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
             {
                 string sql = @"SELECT * FROM public.""Test"" WHERE id = 1;";
-                Test first = connection.QueryFirst<Test>(sql);
+                Test first = connection.SimpleQueryFirst<Test>(sql);
 
                 Assert.AreEqual(1, first.id);
                 Assert.AreEqual($@"test16", first.name);
             }
         }
+
+        [Test]
+        public void SimpleCreateTest()
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
+            {
+                Test newTest = new Test()
+                {
+                    id = 7,
+                    name = "test7"
+                };
+
+                connection.SimpleCreate(newTest);
+            }
+
+            using (NpgsqlConnection connection = new NpgsqlConnection(_connectionString))
+            {
+                string sql = @"SELECT * FROM public.""Test"" WHERE id = 7;";
+                Test first = connection.SimpleQueryFirst<Test>(sql);
+
+                Assert.AreEqual(7, first.id);
+                Assert.AreEqual($@"test7", first.name);
+            }
+        }
+        
     }
 }
