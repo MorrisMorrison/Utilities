@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b6961d7-03a3-49e6-8bf2-9a4619b23d4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Utilities/Utilities/Xml/Xml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Utilities/Utilities/Persistence/Persistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Utilities/Utilities/Persistence/Persistence.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest.sln" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/Main.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/Persistence/Persistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/Persistence/Persistence.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/Debug/netcoreapp3.0/UtitlitiesTest.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/UtitlitiesTest.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/UtitlitiesTest.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/UtitlitiesTest.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/UtitlitiesTest.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/UtitlitiesTest.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/UtitlitiesTest.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UtitlitiesTest/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UtitlitiesTest/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Utilities/Utilities/Xml/Xml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Utilities/Utilities/Xml/Xml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +105,7 @@
       <workItem from="1570919139522" duration="7220000" />
       <workItem from="1570965939462" duration="2033000" />
       <workItem from="1570972783546" duration="677000" />
-      <workItem from="1583098790099" duration="2344000" />
+      <workItem from="1583098790099" duration="2632000" />
     </task>
     <servers />
   </component>

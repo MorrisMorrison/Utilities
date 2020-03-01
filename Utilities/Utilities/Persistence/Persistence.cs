@@ -13,14 +13,14 @@ namespace Utilities.Persistence
 {
     public static class Persistence
     {
-        public static int Execute(this IDbConnection p_connection, string p_sql)
+        public static int SimpleExecute(this IDbConnection p_connection, string p_sql)
         {
             p_connection.Open();
             NpgsqlCommand command = new NpgsqlCommand(p_sql, (NpgsqlConnection) p_connection);
             return command.ExecuteNonQuery();
         }
 
-        public static int ExecuteInTransaction(this IDbConnection p_connection, string p_sql)
+        public static int SimpleExecuteInTransaction(this IDbConnection p_connection, string p_sql)
         {
             int affectedRows = 0;
             p_connection.Open();
@@ -44,7 +44,7 @@ namespace Utilities.Persistence
             return affectedRows;
         }
 
-        public static IEnumerable<T> Query<T>(this IDbConnection p_connection, string p_sql = "")
+        public static IEnumerable<T> SimpleQuery<T>(this IDbConnection p_connection, string p_sql = "")
         {
             if (string.IsNullOrEmpty(p_sql))
             {
@@ -113,7 +113,7 @@ namespace Utilities.Persistence
         }
 
 
-        public static T QueryFirst<T>(this IDbConnection p_connection, string p_sql)
+        public static T SimpleQueryFirst<T>(this IDbConnection p_connection, string p_sql)
         {
             Type type = typeof(T);
             object entity = Activator.CreateInstance(type);
@@ -175,7 +175,7 @@ namespace Utilities.Persistence
             return default(T);
         }
 
-        public static T QueryFirstOrDefault<T>(this IDbConnection p_connection, string p_sql)
+        public static T SimpleQueryFirstOrDefault<T>(this IDbConnection p_connection, string p_sql)
         {
             Type type = typeof(T);
             object entity = Activator.CreateInstance(type);
@@ -237,7 +237,7 @@ namespace Utilities.Persistence
             return (T) entity;
         }
 
-        public static void Update<T>(this IDbConnection p_connection, T p_entity)
+        public static void SimpleUpdate<T>(this IDbConnection p_connection, T p_entity)
         {
             p_connection.Open();
             
@@ -341,9 +341,50 @@ namespace Utilities.Persistence
                     }
                 });
 
-                Console.WriteLine(command.CommandText);
-                Console.WriteLine(sql);
+                command.ExecuteNonQuery();
+            }
+        }
+        
+        
+        public static void SimpleDelete<T>(this IDbConnection p_connection, long p_id)
+        {
+            p_connection.Open();
+            
+            string sql = $@"DELETE FROM ""{typeof(T).Name}"" WHERE id = {p_id}";
 
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, (NpgsqlConnection) p_connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void SimpleCreate<T>(this IDbConnection p_connection, T p_entity)
+        {
+             p_connection.Open();
+            
+            string sql = $@"INSERT INTO ""{typeof(T).Name}"" VALUES (";
+
+            Type type = typeof(T);
+            PropertyInfo[] propertyInfos = type.GetProperties();
+            propertyInfos.Each((p_info, p_index) =>
+            {
+                sql += $@"'{type.GetProperty(p_info.Name).GetValue(p_entity)}'";
+
+                if (p_index != propertyInfos.Length - 1)
+                {
+                    sql += ", ";
+                }
+
+                if (p_index == propertyInfos.Length - 1)
+                {
+                    sql += ");";
+                }
+            });
+
+            Console.WriteLine(sql);
+
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, (NpgsqlConnection) p_connection))
+            {
                 command.ExecuteNonQuery();
             }
         }

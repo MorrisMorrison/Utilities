@@ -63,3 +63,32 @@ using (SqlConnection connection = new SqlConnection(connectionString){
 }
 ```
 
+## XML
+
+### XDocumentExtensions
+Allows finding elements in a more convenient way
+
+- FindElements
+```csharp
+xDocument.FindElements("ElementName");
+xDocument.FindElements("ElementName", "AttributeName");
+xDocument.FindElements("ElementName", "AttributeName", "AttributeValue");
+```
+
+- FindElementsByAttribute
+```csharp
+xDocument.FindElementsByAttribute("AttributeName");
+xDocument.FindElementsByAttribute("AttributeName", "AttributeValue");
+```
+
+
+### XElementExtensions
+Adds Helper Methods for XElement
+
+```csharp
+xElement.HasName("ElementName");
+xElement.HasAttribute("AttributeName");
+xElement.HasAttributeWithValue("AttributeName", "AttributeValue");
+```
+
+
