@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b6961d7-03a3-49e6-8bf2-9a4619b23d4d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utilities/Utilities/Persistence/Persistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Utilities/Utilities/Persistence/Persistence.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utilities/Utilities/Xml/Xml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Utilities/Utilities/Xml/Xml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UtitlitiesTest/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +103,7 @@
       <workItem from="1570919139522" duration="7220000" />
       <workItem from="1570965939462" duration="2033000" />
       <workItem from="1570972783546" duration="677000" />
-      <workItem from="1583098790099" duration="2632000" />
+      <workItem from="1583098790099" duration="3176000" />
     </task>
     <servers />
   </component>
